@@ -1,0 +1,76 @@
+/* พื้นหลังแบบ gradient + รูปภาพโปร่งใส */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top left, #0d1117, #111827);
+}
+
+
+/* การ์ดโปร่งใส */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* กล่อง input */
+.input-style {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  transition: all 0.2s;
+  caret-color: #60a5fa;
+}
+
+.input-style:focus {
+  border-color: #60a5fa;
+  background: rgba(255, 255, 255, 0.15);
+  animation: input-glow 0.3s;
+  box-shadow: 0 0 0 3px rgba(96,165,250,0.25);
+}
+
+/* Animation ตอนกำลังพิมพ์ */
+@keyframes input-glow {
+  0% {
+    box-shadow: 0 0 0 0px rgba(96,165,250,0);
+    border-color: #60a5fa;
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(96,165,250,0.12);
+    border-color: #60a5fa;
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.25);
+    border-color: #60a5fa;
+  }
+}
+
+/* ปุ่ม Login */
+.btn-primary {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+/* Animation ตอนโหลดหน้า */
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadein {
+  animation: fadein 0.6s ease-out;
+}
